@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
-import HomeContainer from "./components/Home";
+import HomeContainer from "./containers/Home";
+import GameFieldContainer from './containers/GameField';
 
 
 const App:React.FC = () => {
@@ -8,6 +9,7 @@ const App:React.FC = () => {
       <BrowserRouter>
          <Switch>
            <Route exact path={'/'} component={HomeContainer}/>
+           <Route exact path={'/game'} component={GameFieldContainer}/>
          </Switch>
       </BrowserRouter>
    );

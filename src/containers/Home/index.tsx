@@ -1,6 +1,9 @@
 import React from 'react';
 
 const HomeContainer:React.FC = () => {
+
+
+
     return (
        <div>
           Главная страница
@@ -21,9 +24,9 @@ const HomeContainer:React.FC = () => {
                 <input type="text" placeholder={'идентификатор'}/>
                 <button>подключиться</button>
              </div>
-
-
           </div>
+
+
        </div>
     );
 };
