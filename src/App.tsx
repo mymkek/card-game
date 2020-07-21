@@ -1,12 +1,18 @@
 import React from 'react';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import HomeContainer from "./containers/Home";
+import GameFieldContainer from './containers/GameField';
 
 
-function App() {
+const App:React.FC = () => {
    return (
-      <div>
-         реакт апп
-      </div>
+      <BrowserRouter>
+         <Switch>
+           <Route exact path={'/'} component={HomeContainer}/>
+           <Route exact path={'/game'} component={GameFieldContainer}/>
+         </Switch>
+      </BrowserRouter>
    );
-}
+};
 
 export default App;
