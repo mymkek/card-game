@@ -1,35 +1,26 @@
 import React from 'react';
 import styles from './h.module.sass';
+import {Button, TextField, Container, ButtonGroup} from '@material-ui/core';
 
-
-const HomeContainer:React.FC = () => {
-
-
+const HomeContainer: React.FC = () => {
 
     return (
-       <div>
-          Главная страница
-
-
-          <div className={styles.class}>
-             <div>
-                <input type="text" placeholder={'никнейм'}/>
-             </div>
-
-               <br/><br/>
-             <div>
-                создать игру (генерится идентификатор, который можно отправить кому-то)
-                <button>Создать</button>
-             </div>
-             <div>
-                подключиться (по идентификатору)
-                <input type="text" placeholder={'идентификатор'}/>
-                <button>подключиться</button>
-             </div>
-          </div>
-
-
-       </div>
+        <div className={styles.wrapper}>
+            <Container maxWidth="sm">
+                <div className={styles.content}>
+                    <h1 className="text-center">Войти</h1>
+                    <TextField required label="Никнейм"/>
+                    <div className={styles.tabs_content}>
+                        <ButtonGroup aria-label="outlined primary button group"
+                                     className={styles.tabs_btn_block}>
+                            <Button>Создать</Button>
+                            <Button>подключиться</Button>
+                        </ButtonGroup>
+                    </div>
+                    {/*<TextField required label="Идентификатор"/>*/}
+                </div>
+            </Container>
+        </div>
     );
 };
 
