@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './h.module.sass';
+
 
 const HomeContainer:React.FC = () => {
 
@@ -9,7 +11,7 @@ const HomeContainer:React.FC = () => {
           Главная страница
 
 
-          <div>
+          <div className={styles.class}>
              <div>
                 <input type="text" placeholder={'никнейм'}/>
              </div>
