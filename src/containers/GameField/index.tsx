@@ -1,11 +1,18 @@
 import React, {useEffect, useRef, useState} from 'react';
 import io from 'socket.io-client';
-import {log} from "util";
+import {inject, observer} from "mobx-react";
+import {userStore} from "../../stores/User";
 
-const GameFieldContainer:React.FC = () => {
+interface Props {
+   userStore?: typeof userStore
+}
+
+@inject("userStore")
+@observer
+const GameFieldContainer:React.FC<Props> = ({ userStore }) => {
 
    const CONNECTION_PORT = 'http://localhost:5000/';
-
+   console.log(userStore);
    let socket = useRef<any>(null);
 
    const [messages, setMessages] = useState<string []>([]);
