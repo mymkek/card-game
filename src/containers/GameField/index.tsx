@@ -1,8 +1,22 @@
 import React, {useEffect, useRef, useState} from 'react';
 import io from 'socket.io-client';
-import {log} from "util";
+import {inject, observer} from "mobx-react";
+import {useStores} from "../../stores";
 
-const GameFieldContainer:React.FC = () => {
+
+
+
+interface Props {}
+
+const GameFieldContainer:React.FC<Props> = () => {
+
+   const {
+      userStore: {
+         nick: userName
+      }
+   } = useStores();
+
+   console.log(userName);
 
    const CONNECTION_PORT = 'http://localhost:5000/';
 
@@ -32,9 +46,9 @@ const GameFieldContainer:React.FC = () => {
    };
 
 
-    return (
+   return (
       <div>
-         Игровое поле
+         <h1>Привет, { userName }</h1>
          <div>
             {messages.map(message => <div>{ message }</div>)}
          </div>
@@ -43,7 +57,7 @@ const GameFieldContainer:React.FC = () => {
          </div>
 
       </div>
-    );
+   );
 };
 
-export default GameFieldContainer;
+export default observer(GameFieldContainer);
