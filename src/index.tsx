@@ -4,14 +4,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import stores from './stores';
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-     <Provider {...stores}>
-        <App />
-     </Provider>
+     <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

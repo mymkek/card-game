@@ -1,6 +1,11 @@
 import React from 'react';
+import {Container} from "@material-ui/core";
+
+import HomeForm from "../../components/Home/Form";
+
 import styles from './h.module.sass';
-import {Button, TextField, Container, ButtonGroup} from '@material-ui/core';
+import {observer} from "mobx-react";
+
 
 const HomeContainer: React.FC = () => {
 
@@ -9,19 +14,11 @@ const HomeContainer: React.FC = () => {
             <Container maxWidth="sm">
                 <div className={styles.content}>
                     <h1 className="text-center">Войти</h1>
-                    <TextField required label="Никнейм"/>
-                    <div className={styles.tabs_content}>
-                        <ButtonGroup aria-label="outlined primary button group"
-                                     className={styles.tabs_btn_block}>
-                            <Button>Создать</Button>
-                            <Button>подключиться</Button>
-                        </ButtonGroup>
-                    </div>
-                    {/*<TextField required label="Идентификатор"/>*/}
+                    <HomeForm/>
                 </div>
             </Container>
         </div>
     );
 };
 
-export default HomeContainer;
+export default observer(HomeContainer);
